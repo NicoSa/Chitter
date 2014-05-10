@@ -1,11 +1,15 @@
 <ul>
 	<% @posts.each do |post| %>
-	<li>Posted on:<%= post.time %> <br><%= post.message %></li>
+	<li><%= post.message %><br>at:<%= post.time %> by:</li>
 	<% end %>
 </ul>
-<div id="new-post">
-	<form action="/" method="post">
-		<textarea cols="50" rows="4" name="message"></textarea>
-		<input type="submit" value="Post">
-	</form>
+<div id="login">
+	<form method="post" action="/login">
+	Email: <input type="text" name='email'>
+	Password: <input type="password" name='password'>
+	<input type="submit" value="Sign in">
+	<a href="/forgotten_password">Forgot your password?</a>
+</form>
+<div id="signup">
+	<a href="/signup/new">Click here to sign up!</a>
 </div>

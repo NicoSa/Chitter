@@ -5,6 +5,7 @@ require_relative './user.rb'
 require_relative './email_controller.rb'
 require_relative './post.rb'
 require_relative './data_mapper_setup.rb'
+require_relative '../helpers/current_user.rb'
 
 include Email
 include BCrypt
@@ -21,42 +22,50 @@ end
 
 post '/' do
   post_time = Time.now
+  post_time = post_time.strftime("%H:%M")
   Post.create(:message => params[:message], :time => post_time)
-  redirect to('/')
+  redirect to('/user_interface')
 end
 
 get '/signup/new' do
     @user = User.new
-    erb :'users/new'
+    erb :new_user
 end
 
 post '/signup' do
-  @user = User.create(:email => params[:email],
-                      :password => params[:password],
-                      :password_confirmation => params[:password_confirmation])
-  if @user.save
+  "#{params[:email]}, #{params[:name]}, #{params[:nickname]}, #{params[:password]}, #{params[:password_confirmation]}"
+  begin
+    @user = User.create(:email => params[:email],
+                        :name => params[:name],
+                        :nickname => params[:nickname],
+                        :password => params[:password],
+                        :password_confirmation => params[:password_confirmation])
+  
+     @user.save
     session[:user_id] = @user.id
-    redirect to ('/')
-  else
-    flash.now[:errors] = @user.errors.full_messages
-    erb :"users/new"
+    "successful signup"
+    # redirect to ('/user_interface')
+  rescue
+    "lol crash"
   end
 end
 
-get '/login' do
-  erb :"sessions/new"
-end
+
 
 post '/login' do
   email, password = params[:email], params[:password]
   @user = User.authenticate(email, password)
   if @user
     session[:user_id] = @user.id
-    redirect to('/')
+    redirect to('/user_interface')
   else
     flash[:errors] = ["The email or password is incorrect"]
     erb :"sessions/new"
   end
+end
+
+get '/user_interface' do
+  erb :user_interface
 end
 
 delete '/logout' do
