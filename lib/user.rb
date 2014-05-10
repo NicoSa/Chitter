@@ -1,5 +1,5 @@
 require 'bcrypt'
-require './data_mapper_setup.rb'
+require 'data_mapper'
 
 class User
 

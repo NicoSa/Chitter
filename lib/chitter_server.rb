@@ -28,13 +28,14 @@ post '/' do
 end
 
 get '/signup/new' do
-    @user = User.new
     erb :new_user
 end
 
 post '/signup' do
-  "#{params[:email]}, #{params[:name]}, #{params[:nickname]}, #{params[:password]}, #{params[:password_confirmation]}"
-  begin
+  puts "#{params[:email]}, #{params[:name]}, #{params[:nickname]}, #{params[:password]}, #{params[:password_confirmation]}"
+  # begin
+    @user = User.new
+
     @user = User.create(:email => params[:email],
                         :name => params[:name],
                         :nickname => params[:nickname],
@@ -45,9 +46,9 @@ post '/signup' do
     session[:user_id] = @user.id
     "successful signup"
     redirect to ('/user_interface')
-  rescue
-    "lol crash"
-  end
+  # rescue
+  #   "User wasn´t created"
+  # end
 end
 
 
@@ -60,18 +61,22 @@ post '/login' do
     redirect to('/user_interface')
   else
     flash[:errors] = ["The email or password is incorrect"]
-    erb :"sessions/new"
+    'Wrong credentials <a href="/">back</a><br><br><a href="/forgotten_password">Forgot your password?</a>'
   end
 end
 
 get '/user_interface' do
+  if session[:user_id] != nil
   @posts = Post.all
   erb :user_interface
+  else
+  redirect to('/')
+  end
 end
 
 delete '/logout' do
   session[:user_id] = nil
-  "Good bye!"
+  redirect to ('/')
 end
 
 get '/forgotten_password' do
