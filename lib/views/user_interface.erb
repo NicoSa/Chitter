@@ -1,7 +1,11 @@
 Your´re logged in
-<ul>
+<ul>	
+	<% begin %>
 	<% @posts.each do |post| %>
 	<li><%= post.message %><br>at:<%= post.time %> by:</li>
+	<% end %>
+	<% rescue %>
+	something went wrong
 	<% end %>
 </ul>
 <div id="new-post">
@@ -10,3 +14,7 @@ Your´re logged in
 		<input type="submit" value="Post">
 	</form>
 </div>
+<form method="post" action="/sessions">
+		<input type="hidden" name="_method" value="delete">
+		<input type="submit" value="Sign out">
+</form>

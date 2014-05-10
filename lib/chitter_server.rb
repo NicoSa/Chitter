@@ -41,10 +41,10 @@ post '/signup' do
                         :password => params[:password],
                         :password_confirmation => params[:password_confirmation])
   
-     @user.save
+    @user.save
     session[:user_id] = @user.id
     "successful signup"
-    # redirect to ('/user_interface')
+    redirect to ('/user_interface')
   rescue
     "lol crash"
   end
@@ -65,6 +65,7 @@ post '/login' do
 end
 
 get '/user_interface' do
+  @posts = Post.all
   erb :user_interface
 end
 
