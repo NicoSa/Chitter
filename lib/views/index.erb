@@ -1,0 +1,11 @@
+<ul>
+	<% @posts.each do |post| %>
+	<li>Posted on:<%= post.time %> <br><%= post.message %></li>
+	<% end %>
+</ul>
+<div id="new-post">
+	<form action="/" method="post">
+		<textarea cols="50" rows="4" name="message"></textarea>
+		<input type="submit" value="Post">
+	</form>
+</div>
