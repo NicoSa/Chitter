@@ -22,7 +22,6 @@ end
 
 post '/' do
   post_time = Time.now
-  #post_time = post_time.strftime("%H:%M")
   Post.create(:message => params[:message], :time => post_time, :nickname => params[:nickname])
   redirect to('/user_interface')
 end
