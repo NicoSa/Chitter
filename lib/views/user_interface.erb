@@ -12,7 +12,7 @@
 <ul>	
 	<% begin %>
 	<% @posts.each do |post| %>
-	<li><%= post.message %><br>at:<%= post.time %> by:<%= post.nickname %></li>
+	<li><%= post.message %><br>at:<%= post.time.strftime("%H:%M") %> by:<%= post.nickname %></li>
 	<% end %>
 	<% rescue %>
 	something went wrong

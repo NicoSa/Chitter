@@ -22,7 +22,7 @@ end
 
 post '/' do
   post_time = Time.now
-  post_time = post_time.strftime("%H:%M")
+  #post_time = post_time.strftime("%H:%M")
   Post.create(:message => params[:message], :time => post_time, :nickname => params[:nickname])
   redirect to('/user_interface')
 end
@@ -68,7 +68,7 @@ end
 
 get '/user_interface' do
   if session[:user_id] != nil
-  @posts = Post.all#(:order => [:time])
+  @posts = Post.all(:order => [:time.desc])
   erb :user_interface
   else
   redirect to('/')
