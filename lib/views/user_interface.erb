@@ -1,16 +1,7 @@
-Your´re logged in
-<ul>	
-	<% begin %>
-	<% @posts.each do |post| %>
-	<li><%= post.message %><br>at:<%= post.time %> by:</li>
-	<% end %>
-	<% rescue %>
-	something went wrong
-	<% end %>
-</ul>
 <div id="new-post">
 	<form action="/" method="post">
-		<textarea cols="50" rows="4" name="message"></textarea>
+		<textarea cols="50" rows="4" name="message" maxlength="140"></textarea>
+		<input type="hidden" name="nickname" value="<%= @nickname %>">
 		<input type="submit" value="Post">
 	</form>
 </div>
@@ -18,3 +9,12 @@ Your´re logged in
 		<input type="hidden" name="_method" value="delete">
 		<input type="submit" value="Sign out">
 </form>
+<ul>	
+	<% begin %>
+	<% @posts.each do |post| %>
+	<li><%= post.message %><br>at:<%= post.time %> by:<%= post.nickname %></li>
+	<% end %>
+	<% rescue %>
+	something went wrong
+	<% end %>
+</ul>

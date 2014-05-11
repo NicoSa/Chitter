@@ -23,7 +23,7 @@ end
 post '/' do
   post_time = Time.now
   post_time = post_time.strftime("%H:%M")
-  Post.create(:message => params[:message], :time => post_time)
+  Post.create(:message => params[:message], :time => post_time, :nickname => params[:nickname])
   redirect to('/user_interface')
 end
 
@@ -44,7 +44,6 @@ post '/signup' do
   
     @user.save
     session[:user_id] = @user.id
-    "successful signup"
     redirect to ('/user_interface')
   # rescue
   #   "User wasn´t created"
@@ -58,6 +57,8 @@ post '/login' do
   @user = User.authenticate(email, password)
   if @user
     session[:user_id] = @user.id
+    find_user = User.first(:email => params[:email])
+    @nickname = find_user.nickname
     redirect to('/user_interface')
   else
     flash[:errors] = ["The email or password is incorrect"]
@@ -67,7 +68,7 @@ end
 
 get '/user_interface' do
   if session[:user_id] != nil
-  @posts = Post.all
+  @posts = Post.all#(:order => [:time])
   erb :user_interface
   else
   redirect to('/')
