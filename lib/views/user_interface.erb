@@ -11,7 +11,7 @@
 <ul>	
 	<% begin %>
 	<% @posts.each do |post| %>
-	<br><li><%= post.message %><br>at:<%= post.time.strftime("%H:%M:%S - %A") %> by:<%= post.nickname %></li>
+	<br><li><%= post.message %><br>at:<%= post.time.strftime("%H:%M:%S - %A") %> by:<%= post.nickname %> aka <%= post.name %></li>
 	<% end %>
 	<% rescue %>
 	something went wrong

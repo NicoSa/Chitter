@@ -10,6 +10,6 @@
 </div>
 <ul>
 	<% @posts.each do |post| %>
-	<li><%= post.message %><br>at:<%= post.time.strftime("%H:%M:%S - %A") %> by: <%= post.nickname %></li>
+	<li><%= post.message %><br>at:<%= post.time.strftime("%H:%M:%S - %A") %> by: <%= post.nickname %> aka <%= post.name %></li>
 	<% end %>
 </ul>

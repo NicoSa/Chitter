@@ -19,7 +19,7 @@ enable :sessions
 set :session_secret, 'super secret'
 
 get '/' do
-  @posts = Post.all
+  @posts = Post.all(:order => [:time.desc])
   erb :index
 end
 
