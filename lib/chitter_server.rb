@@ -25,9 +25,7 @@ end
 
 post '/' do
   post_time = Time.now
-  Post.create(:message => params[:message], :time => post_time, :nickname => session[:nickname], :name => session[:name])
-  puts "there should be the nickname under this"
-  
+  Post.create(:message => params[:message], :time => post_time, :nickname => session[:nickname], :name => session[:name])  
   redirect to('/user_interface')
 end
 
@@ -36,8 +34,6 @@ get '/signup/new' do
 end
 
 post '/signup' do
-  puts "Signup gets all the User info:"
-  puts "#{params[:email]}, #{params[:name]}, #{params[:nickname]}, #{params[:password]}, #{params[:password_confirmation]}"
   session[:nickname] = params[:nickname]
   session[:name] = params[:name]
   begin
@@ -121,7 +117,7 @@ get '/reset_password/:token' do
   begin 
     user.password_token == params[:token]
     @token = params[:token]
-    erb :"users/reset_password"
+    erb :reset_password
   rescue
     erb :token_has_been_used
   end
