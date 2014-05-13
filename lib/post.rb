@@ -6,5 +6,6 @@ class Post
 	property :message, Text
 	property :time, DateTime, :default => DateTime.now
 	property :nickname, Text
+	property :name, Text
 
 end

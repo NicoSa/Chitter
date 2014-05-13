@@ -2,7 +2,7 @@
 	<form method="post" action="/login">
 	Email: <input type="text" name='email'>
 	Password: <input type="password" name='password'>
-	<input type="submit" value="Sign in">
+	<input type="submit" value="Sign in" name="Sign in">
 	<a href="/forgotten_password">Forgot your password?</a>
 </form>
 <div id="signup">
@@ -10,6 +10,6 @@
 </div>
 <ul>
 	<% @posts.each do |post| %>
-	<li><%= post.message %><br>at:<%= post.time %> by:</li>
+	<li><%= post.message %><br>at:<%= post.time.strftime("%H:%M:%S - %A") %> by: <%= post.nickname %></li>
 	<% end %>
 </ul>

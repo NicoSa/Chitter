@@ -1,24 +1,7 @@
-Given(/^I sign up$/) do
-  pending # express the regexp above with the code you wish you had
+Given(/^I am on the homepage$/) do
+	visit('/')
 end
 
-Given(/^log in$/) do
-  pending # express the regexp above with the code you wish you had
+Then(/^I should see "(.*?)"$/) do |text|
+	expect(page).to have_content(:text)
 end
-
-Then(/^I want to see board$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Given(/^I log in$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Given(/^post "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^I want to see "(.*?)" on board$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-

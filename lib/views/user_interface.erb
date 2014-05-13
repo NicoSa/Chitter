@@ -1,7 +1,6 @@
 <div id="new-post">
 	<form action="/" method="post">
 		<textarea cols="50" rows="4" name="message" maxlength="140"></textarea>
-		<input type="hidden" name="nickname" value="<%= @nickname %>">
 		<input type="submit" value="Post">
 	</form>
 </div>
@@ -12,7 +11,7 @@
 <ul>	
 	<% begin %>
 	<% @posts.each do |post| %>
-	<br><li><%= post.message %><br>at:<%= post.time.strftime("%H:%M:%S - %A") %>by:<%= post.nickname %></li>
+	<br><li><%= post.message %><br>at:<%= post.time.strftime("%H:%M:%S - %A") %> by:<%= post.nickname %></li>
 	<% end %>
 	<% rescue %>
 	something went wrong

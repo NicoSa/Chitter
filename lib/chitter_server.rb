@@ -7,8 +7,11 @@ require_relative './post.rb'
 require_relative './data_mapper_setup.rb'
 require_relative '../helpers/current_user.rb'
 
+
+
 include Email
 include BCrypt
+
 
 use Rack::Flash
 
@@ -22,7 +25,9 @@ end
 
 post '/' do
   post_time = Time.now
-  Post.create(:message => params[:message], :time => post_time, :nickname => params[:nickname])
+  Post.create(:message => params[:message], :time => post_time, :nickname => session[:nickname], :name => session[:name])
+  puts "there should be the nickname under this"
+  
   redirect to('/user_interface')
 end
 
@@ -31,8 +36,11 @@ get '/signup/new' do
 end
 
 post '/signup' do
+  puts "Signup gets all the User info:"
   puts "#{params[:email]}, #{params[:name]}, #{params[:nickname]}, #{params[:password]}, #{params[:password_confirmation]}"
-  # begin
+  session[:nickname] = params[:nickname]
+  session[:name] = params[:name]
+  begin
     @user = User.new
 
     @user = User.create(:email => params[:email],
@@ -44,9 +52,9 @@ post '/signup' do
     @user.save
     session[:user_id] = @user.id
     redirect to ('/user_interface')
-  # rescue
-  #   "User wasn´t created"
-  # end
+  rescue
+   "Nickname or Email are already taken, please try again!"
+  end
 end
 
 
@@ -56,8 +64,13 @@ post '/login' do
   @user = User.authenticate(email, password)
   if @user
     session[:user_id] = @user.id
+    session[:nickname] = @user.nickname
+    session[:name] = @user.name
+    puts "Login gets id, nickname, name:"
+    puts @user.id.inspect
+    puts @user.nickname.inspect
+    puts @user.name.inspect
     find_user = User.first(:email => params[:email])
-    @nickname = find_user.nickname
     redirect to('/user_interface')
   else
     flash[:errors] = ["The email or password is incorrect"]
@@ -76,6 +89,8 @@ end
 
 delete '/logout' do
   session[:user_id] = nil
+  session[:nickname] = nil
+  session[:name] = nil 
   redirect to ('/')
 end
 
