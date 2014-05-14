@@ -23,11 +23,11 @@ feature "User signs up" do
     fill_in 'nickname', :with => 'SuperNico'
     fill_in 'password', :with => 'password'
     fill_in 'password_confirmation', :with => 'password'
-    expect(page).to have_content("Nickname or Email are already taken, please try again!")
+    click_on('Sign up')
+    expect(page).to have_content("Nickname or Email are already taken!")
   end
 
   scenario "and is taken to user_interface" do
-    visit('sign')
     visit('/user_interface')
     expect(page).not_to have_content("Click here to sign up!")
   end
