@@ -8,18 +8,35 @@ Feature: Chitter
 		When I am on the homepage chitter
 		Then I should see no bookmarks
 
-	# Scenario: Entering page
-	# 	Given I am on the homepage
-	# 	Then I should see "sign up!"	
-	# 	And I should see "Sign in"
+	Scenario: Posting
+		Given I log in with my credentials
+		And post "Hello, World"
+		Then I want to see "Hello, World" in user interface
 
-	# Scenario: Posting
-	# 	Given I log in
-	# 	And post "Hello, World"
-	# 	Then I want to see "Hello, World" on board
+	Scenario: Signup
+	 	Given I am signing up
+	 	Then I should see "Welcome"	
+
+	Scenario: Signup with taken email or nickname
+		Given I am signing up 
+		And the email and namen is already taken
+		Then I should see "Nickname or Email are already taken!"
 	
-	# Scenario: Sign up
-	# 	Given I sign up
-	# 	And log in
-	# 	Then I want to see board
-	# 	
+	Scenario: Signout 
+		Given I sign out
+		And I had posted "Hello, World"
+		Then I should see "Hello, World" on the homepage
+
+	Scenario: Wrong Login
+		Given I login without having signed up
+		Then I should see "Wrong credentials"
+
+	Scenario: Forget Password
+		Given I forget my password
+		And require a new one
+		Then I should see "Please check your email!"
+
+	Scenario: Reset Password
+		Given I reset my password
+		Then I should see "All done, you can login with your new password now"
+

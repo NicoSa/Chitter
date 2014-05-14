@@ -49,7 +49,7 @@ post '/signup' do
     session[:user_id] = @user.id
     redirect to ('/user_interface')
   rescue
-   "Nickname or Email are already taken, please try again!"
+   "Nickname or Email are already taken!"
   end
 end
 
@@ -58,19 +58,15 @@ end
 post '/login' do
   email, password = params[:email], params[:password]
   @user = User.authenticate(email, password)
-  if @user
+  if @users
     session[:user_id] = @user.id
     session[:nickname] = @user.nickname
     session[:name] = @user.name
-    puts "Login gets id, nickname, name:"
-    puts @user.id.inspect
-    puts @user.nickname.inspect
-    puts @user.name.inspect
     find_user = User.first(:email => params[:email])
     redirect to('/user_interface')
   else
     flash[:errors] = ["The email or password is incorrect"]
-    'Wrong credentials <a href="/">back</a><br><br><a href="/forgotten_password">Forgot your password?</a>'
+    erb :wrong_login
   end
 end
 
@@ -107,6 +103,7 @@ post '/forgotten_password' do
     user.save
     #send email with token and link
     send_recovery_email(generated_token,email)
+    erb :please_check_email
   rescue
     erb :user_not_exist 
   end
