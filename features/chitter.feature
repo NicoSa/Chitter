@@ -1,12 +1,17 @@
 Feature: Chitter 
-	In order to post on a public board
+	In order to communicate with my fellow Makers
 	As a user
-	I have to be able to put in text
+	I want to see peeps on a public board
 
-	Scenario: Entering page
-		Given I am on the homepage
-		Then I should see "sign up!"	
-		And I should see "Sign in"
+	Scenario: When there are no bookmarks
+		Given there are no peeps
+		When I am on the homepage chitter
+		Then I should see no bookmarks
+
+	# Scenario: Entering page
+	# 	Given I am on the homepage
+	# 	Then I should see "sign up!"	
+	# 	And I should see "Sign in"
 
 	# Scenario: Posting
 	# 	Given I log in

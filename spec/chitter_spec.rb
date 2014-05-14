@@ -27,6 +27,7 @@ feature "User signs up" do
   end
 
   scenario "and is taken to user_interface" do
+    visit('sign')
     visit('/user_interface')
     expect(page).not_to have_content("Click here to sign up!")
   end
