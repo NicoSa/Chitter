@@ -7,7 +7,7 @@ require_relative './post.rb'
 require_relative './user.rb'
 require_relative './chitter.rb'
 
-DataMapper.setup(:default, "postgres://localhost/chitter_#{env}")
+DataMapper.setup(:default, database_url)
 
 DataMapper.finalize
 
