@@ -60,6 +60,20 @@ feature "User signs in" do
     expect(page).to_not have_content("Welcome Nico")
   end
 
+  scenario "posts and checks board after signout" do
+    visit ('/')
+    fill_in 'email', :with => 'test@test.com'
+    fill_in 'password', :with => 'test'
+    click_on('Sign in')
+    expect(page).to have_content("Welcome Nico")
+    fill_in 'message', :with => 'Hello Chitter!'
+    click_on('Post')
+    expect(page).to have_content("Hello Chitter!")
+    click_on('Sign out')
+    expect(page).to have_content("Hello Chitter!")
+  end
+
+
 end
 
 feature "User signs out" do

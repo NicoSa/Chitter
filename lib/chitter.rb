@@ -7,11 +7,8 @@ require_relative './post.rb'
 require_relative './data_mapper_setup.rb'
 require_relative '../helpers/current_user.rb'
 
-
-
 include Email
 include BCrypt
-
 
 use Rack::Flash
 
@@ -20,7 +17,7 @@ set :session_secret, 'super secret'
 
 get '/' do
   @posts = Post.all(:order => [:time.desc])
-  erb :index
+  erb :"User/index"
 end
 
 post '/' do
@@ -30,7 +27,7 @@ post '/' do
 end
 
 get '/signup/new' do
-    erb :new_user
+    erb :"User/new_user"
 end
 
 post '/signup' do
@@ -64,15 +61,15 @@ post '/login' do
     find_user = User.first(:email => params[:email])
     redirect to('/user_interface')
   else
-    flash[:errors] = ["The email or password is incorrect"]
-    erb :wrong_login
+    flash[:Errorss] = ["The email or password is incorrect"]
+    erb :"Errors/wrong_login"
   end
 end
 
 get '/user_interface' do
   if session[:user_id] != nil
   @posts = Post.all(:order => [:time.desc])
-  erb :user_interface
+  erb :"User/user_interface"
   else
   redirect to('/')
   end
@@ -86,7 +83,7 @@ delete '/logout' do
 end
 
 get '/forgotten_password' do
-  erb :forgotten_password
+  erb :"Recovery/forgotten_password"
 end
 
 post '/forgotten_password' do
@@ -102,9 +99,9 @@ post '/forgotten_password' do
     user.save
     #send email with token and link
     send_recovery_email(generated_token,email)
-    erb :please_check_email
+    erb :"Recovery/please_check_email"
   rescue
-    erb :user_not_exist 
+    erb :"Errors/user_not_exist"
   end
 end
 
@@ -113,9 +110,9 @@ get '/reset_password/:token' do
   begin 
     user.password_token == params[:token]
     @token = params[:token]
-    erb :reset_password
+    erb :"Recovery/reset_password"
   rescue
-    erb :token_has_been_used
+    erb :"Errors/token_has_been_used"
   end
 end
 
@@ -132,8 +129,8 @@ post '/reset_password' do
       user.password_token_timestamp = nil
       #save changes
       user.save
-      erb :password_changed
+      erb :"Recovery/password_changed"
   rescue
-    erb :token_crash
+    erb :"Errors/token_crash"
   end
 end
