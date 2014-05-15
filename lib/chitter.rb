@@ -36,8 +36,7 @@ end
 post '/signup' do
   session[:nickname] = params[:nickname]
   session[:name] = params[:name]
-  begin
-    @user = User.new
+  if @user = User.new
 
     @user = User.create(:email => params[:email],
                         :name => params[:name],
@@ -48,7 +47,7 @@ post '/signup' do
     @user.save
     session[:user_id] = @user.id
     redirect to ('/user_interface')
-  rescue
+  else
    "Nickname or Email are already taken!"
   end
 end
@@ -58,7 +57,7 @@ end
 post '/login' do
   email, password = params[:email], params[:password]
   @user = User.authenticate(email, password)
-  if @users
+  if @user
     session[:user_id] = @user.id
     session[:nickname] = @user.nickname
     session[:name] = @user.name

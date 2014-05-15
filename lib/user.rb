@@ -15,7 +15,7 @@ class User
 
 	property :id, Serial
 	property :email, String, :unique => false, :message => "This email is already taken"
-	property :name, Text
+	property :name, String, :unique => false, :message => "This name is already taken"
 	property :nickname, String, :unique => false, :message => "This nickname is already taken"
 	property :password_digest, Text
 	property :password_token, Text

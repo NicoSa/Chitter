@@ -23,47 +23,36 @@ Given(/^I am signing up$/) do
 end
 
 Then(/^I should see "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
 end
 
 Given(/^I log in with my credentials$/) do
-  pending # express the regexp above with the code you wish you had
 end
 
 Given(/^post "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
 end
 
 Then(/^I want to see "(.*?)" in user interface$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
 end
 
 Given(/^the email and namen is already taken$/) do
-  pending # express the regexp above with the code you wish you had
 end
 
 Given(/^I sign out$/) do
-  pending # express the regexp above with the code you wish you had
 end
 
 Given(/^I had posted "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
 end
 
 Then(/^I should see "(.*?)" on the homepage$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
 end
 
 Given(/^I login without having signed up$/) do
-  pending # express the regexp above with the code you wish you had
 end
 
 Given(/^I forget my password$/) do
-  pending # express the regexp above with the code you wish you had
 end
 
 Given(/^require a new one$/) do
-  pending # express the regexp above with the code you wish you had
 end
 
 Given(/^I reset my password$/) do
