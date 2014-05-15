@@ -9,6 +9,7 @@ gem 'bcrypt'
 gem 'rack-flash3'
 gem 'mailgun-ruby'
 gem 'rest_client'
+gem 'pg'
 
 group :development, :test do
 	gem 'rspec'
