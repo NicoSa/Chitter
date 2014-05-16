@@ -29,6 +29,10 @@ body .index-header {
 	width: 590px;
 }
 
+ul :hover {
+	background-color: #f5f8fa;
+}
+
 .feed .feed-header {
 	text-align: left;
 }
