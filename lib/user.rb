@@ -9,8 +9,8 @@ class User
 	
 	include DataMapper::Resource
 	
-	validates_uniqueness_of :email#, :scope => :section_id, :message => "test"
-	validates_uniqueness_of :nickname#, :scope => :section_id, :message => "test"
+	validates_uniqueness_of :email
+	validates_uniqueness_of :nickname
 	validates_confirmation_of :password
 
 	property :id, Serial

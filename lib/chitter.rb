@@ -31,8 +31,7 @@ get '/signup/new' do
 end
 
 post '/signup' do
-
-    @user = User.new(:email => params[:email],
+  @user = User.new(:email => params[:email],
                         :name => params[:name],
                         :nickname => params[:nickname],
                         :password => params[:password],
