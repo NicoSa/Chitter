@@ -31,21 +31,17 @@ get '/signup/new' do
 end
 
 post '/signup' do
-  session[:nickname] = params[:nickname]
-  session[:name] = params[:name]
-  if @user = User.new
 
-    @user = User.create(:email => params[:email],
+    @user = User.new(:email => params[:email],
                         :name => params[:name],
                         :nickname => params[:nickname],
                         :password => params[:password],
                         :password_confirmation => params[:password_confirmation])
-  
-    @user.save
+  if @user.save
     session[:user_id] = @user.id
     redirect to ('/user_interface')
-  else
-   "Nickname or Email are already taken!"
+  else 
+    erb :"Errors/signup_taken"
   end
 end
 
@@ -61,7 +57,6 @@ post '/login' do
     find_user = User.first(:email => params[:email])
     redirect to('/user_interface')
   else
-    flash[:Errorss] = ["The email or password is incorrect"]
     erb :"Errors/wrong_login"
   end
 end
