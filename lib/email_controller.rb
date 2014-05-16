@@ -1,3 +1,5 @@
+url = "nicosa.herokuapp.com" || "localhost:9393"
+
 require 'rest_client'
 
 module Email
@@ -9,7 +11,7 @@ def send_recovery_email(token, email)
   :to => "#{email}",
   :subject => "Reset password for Bookmark Manager",
   :text => "Is this your email: #{email} ? To reset your password copy and paste this link to your browser:\n\n 
-  			http://localhost:9393/reset_password/#{token}"
+  			http://#{url}/reset_password/#{token}"
   #debug message
   puts "Send without Errors"
 end
