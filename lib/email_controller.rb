@@ -1,8 +1,10 @@
-url = "nicosa.herokuapp.com" || "localhost:9393"
-
 require 'rest_client'
 
 module Email
+
+def base_url
+	 ENV["RACK_ENV"] == "production" ? "chitternicosa.herokuapp.com" : "localhost:9393" 
+end
 
 def send_recovery_email(token, email)
   RestClient.post "https://api:key-7ap14r7nxhar8f19n1xrbp6c3lz9-k99"\
@@ -11,7 +13,7 @@ def send_recovery_email(token, email)
   :to => "#{email}",
   :subject => "Reset password for Chitter",
   :text => "Is this your email: #{email} ? To reset your password copy and paste this link to your browser:\n\n 
-  			http://#{url}/reset_password/#{token}"
+  			http://#{base_url}/reset_password/#{token}"
   #debug message
   puts "Send without Errors"
 end
