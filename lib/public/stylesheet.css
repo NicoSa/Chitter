@@ -1,9 +1,67 @@
-#logo img {
+* {
+	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+body #header img {
 	width: 237px;
 	height: 179px;
 	
 }
-
-body {
+body
+{
 	background-color: #ffffff;
+}
+body #header {
+	text-align: center;
+}
+
+body .index-header {
+	text-align: center;
+}
+
+.feed {
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	border: 1px solid #e6e6e6;
+	background-color: white;
+	padding: 10px;
+	margin: auto;
+	height: 100px;
+	width: 590px;
+}
+
+.feed .feed-header {
+	text-align: left;
+}
+
+.feed .feed-message {
+	text-align: left;
+	color: #292f33;
+	font-size: 14px;
+	margin-top: 1%;
+}
+
+.feed .name {
+	display: inline;
+	font-weight: normal;
+	color: #8899a6;
+	font-size: 13px;
+}
+
+.feed .nickname {
+	display: inline;
+	font-weight:bold;
+	font-size: 14px;
+
+}
+
+.feed .time {
+	display: inline;
+	font-weight: normal;
+	color: #8899a6;
+	font-size: 13px;
+}
+
+.feed .feed-header .dot {
+		color: #8899a6;
+		font-size: 13px;
 }

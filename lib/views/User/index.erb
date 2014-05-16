@@ -1,3 +1,4 @@
+<div class="index-header">
 <div id="login">
 	<form method="post" action="/login">
 	Email: <input type="text" name='email'>
@@ -8,8 +9,16 @@
 <div id="signup">
 	<a href="/signup/new">Click here to sign up!</a>
 </div>
+</div>
 <ul>
 	<% @posts.each do |post| %>
-	<li><%= post.message %><br>at:<%= post.time.strftime("%H:%M:%S - %A") %> by: <%= post.nickname %> aka <%= post.name %></li>
+	<div class="feed">
+		<div class="feed-header">
+			<div class="nickname"><%= post.nickname %></div>
+			<div class="name">@<%= post.name %></div> <span class="dot">·</span>
+			<div class="time"><%= post.time.strftime("%A %H:%M") %></div>
+		</div>
+		<div class="feed-message"><%= post.message %></div>	
+	</div>
 	<% end %>
 </ul>
