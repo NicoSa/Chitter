@@ -3,13 +3,14 @@
 }
 
 body #header img {
-	width: 237px;
-	height: 179px;
+	
 	
 }
 body
 {
 	background-color: #ffffff;
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+
 }
 body #header {
 	text-align: center;
@@ -89,3 +90,52 @@ ul .feed:hover {
 		color: #8899a6;
 		font-size: 13px;
 }
+
+body .login {
+	left: 536px;
+	background: white;
+	border: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+	border-left: 1px solid #e6e6e6;
+	border-right: 1px solid #e6e6e6;
+	border-radius: 4px;
+	margin: auto;
+	height: 110px;
+	width: 302px;
+}
+
+body .index-header .login .login-button input{
+	color: #fff;
+	background-color: #55acee;
+	border: 1px solid #3b88c3;
+	font-size: 14px;
+	font-weight: bold;
+	border-spacing: 2px;
+	border-color: gray;
+	border-radius: 4px;
+}
+
+body .index-header .login .login-button:hover{
+	background-color: #44acee;
+}
+
+body .index-header .login form .login-email input {
+	border-radius: 4px;
+	height: 30px;
+	width: 273px;
+	box-shadow: inset 0 1px 0 #eee,#fff 0 1px 0;
+	font-size: 13px;
+	color: #8899a6;
+	margin: 5px;
+
+}
+
+body .index-header .login form .password input {
+	border-radius: 4px;
+	width: 150px;
+	height: 30px;
+	box-shadow: inset 0 1px 0 #eee,#fff 0 1px 0;
+	margin: 5px;
+}
+
+body .index-header .login .login .login

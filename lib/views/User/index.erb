@@ -1,15 +1,25 @@
 <div class="index-header">
-<div id="login">
-	<form method="post" action="/login">
-	Email: <input type="text" name='email'>
-	Password: <input type="password" name='password'>
-	<input type="submit" value="Sign in" name="Sign in">
-	<a href="/forgotten_password">Forgot your password?</a>
-</form>
-<div id="signup">
-	<a href="/signup/new">Click here to sign up!</a>
-</div>
-</div>
+	<div class="login">
+		<form method="post" action="/login">
+		<div class="login-email">
+			<input type="text" name='email' placeholder="Email">
+		</div>
+		<span class="password">
+			<input type="password" name='password' placeholder="Password">
+		</span>
+		<span class="login-button">
+			<input type="submit" value="Sign in" name="Sign in">
+		</span>
+		<div class="login-text">
+		<div class="login-forgotpassword">
+			<a href="/forgotten_password">Forgot your password?</a>
+		</div>
+		</form>
+		<span id="signup">
+			<a href="/signup/new">Click here to sign up!</a>
+		</span>
+		</div>
+	</div>
 <ul>
 <div class="cheets-heading">Cheets</div>
 
