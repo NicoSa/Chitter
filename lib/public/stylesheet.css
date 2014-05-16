@@ -1,3 +1,9 @@
-/*body {
-	text-align: center;	
-}*/
+#logo img {
+	width: 237px;
+	height: 179px;
+	
+}
+
+body {
+	background-color: #ffffff;
+}
