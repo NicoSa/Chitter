@@ -2,16 +2,14 @@
 	-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 }
 
-body #header img {
-	
-	
-}
+
 body
 {
 	background-color: #ffffff;
 	font-family: "Helvetica Neue", Helvetica, sans-serif;
 
 }
+
 body #header {
 	text-align: center;
 }
@@ -91,7 +89,7 @@ ul .feed:hover {
 		font-size: 13px;
 }
 
-body .login {
+body .index-header .login {
 	left: 536px;
 	background: white;
 	border: 1px solid #e6e6e6;
@@ -100,11 +98,10 @@ body .login {
 	border-right: 1px solid #e6e6e6;
 	border-radius: 4px;
 	margin: auto;
-	height: 110px;
 	width: 302px;
 }
 
-body .index-header .login .login-button input{
+.signin-btn {
 	color: #fff;
 	background-color: #55acee;
 	border: 1px solid #3b88c3;
@@ -113,7 +110,77 @@ body .index-header .login .login-button input{
 	border-spacing: 2px;
 	border-color: gray;
 	border-radius: 4px;
+	margin-right: 6px;
+	padding-bottom: 7px;
+	padding-top: 3px;
+	/* float: right; */
+	position: absolute;
+	right: 1.8%;
+	top: 42.2%;
 }
 
+/*body .index-header .login .password-signup tr tbody {
+	height: 30px;
+	width: 276px;
+}*/
+
+.password-signup {
+	position: relative;
+}
+
+.login-password {
+	height: 30px;
+	width: 276px;
+	border-radius: 4px;
+	border: 1px solid #ccd6dd;
+	padding: 7px;
+}
+
+.login-email {
+	height: 30px;
+	width: 276px;
+	border-radius: 4px;
+	border: 1px solid #ccd6dd;
+	padding: 9px;
+}
+
+.login_button input {
+	height: 30px;
+	width: 102px;
+}
+
+.login-forgotpassword,
+.login-forgotpassword a {
+	color: #0084b4;
+	font-size: 12px;
+	line-height: 13px;
+	margin: 0;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+	background: transparent;
+	text-decoration: none;
+	margin-bottom: 16px;
+}
+
+.login .signup a {
+	color: #0084b4;
+	font-size: 12px;
+	line-height: 13px;
+	margin: 0;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+	background: transparent;
+	text-decoration: none;
+	border-spacing: 2px;
+
+}
+
+.dot-form {
+	color: #0084b4;
+	font-size: 12px;
+	line-height: 13px;
+	margin: 0;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+	background: transparent;
+	text-decoration: none;
+}
 
 
