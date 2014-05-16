@@ -7,9 +7,9 @@ module Email
 def send_recovery_email(token, email)
   RestClient.post "https://api:key-7ap14r7nxhar8f19n1xrbp6c3lz9-k99"\
   "@api.mailgun.net/v2/app25052767.mailgun.org/messages",
-  :from => " Password Recovery Chitter <password_recovery@nicosaueressig.de>",
+  :from => "Password Recovery Chitter <password_recovery@nicosaueressig.de>",
   :to => "#{email}",
-  :subject => "Reset password for Bookmark Manager",
+  :subject => "Reset password for Chitter",
   :text => "Is this your email: #{email} ? To reset your password copy and paste this link to your browser:\n\n 
   			http://#{url}/reset_password/#{token}"
   #debug message
