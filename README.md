@@ -1,7 +1,7 @@
 Chitter
 ===
 This project represents two weekend challenges at Makers Academy, London(Week 6 and Week 7). What you should see is a basic Twitter style app. You can signup, login, recover your password and post to a public board. All the frontend design was done without Twitter Bootstrap.
-![]:(chitter.png)
+![](chitter.png)
 
 Heroku
 ----
