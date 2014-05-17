@@ -111,12 +111,17 @@ body .index-header .login {
 	border-color: gray;
 	border-radius: 4px;
 	margin-right: 6px;
-	padding-bottom: 7px;
-	padding-top: 3px;
-	/* float: right; */
+	padding-bottom: 6px;
+	padding-top: 4px;
 	position: absolute;
 	right: 1.8%;
-	top: 42.2%;
+	height: 30px;
+	top: 44.2%;
+	width: 80px;
+}
+
+.signin-btn:active {
+	background: green;
 }
 
 /*body .index-header .login .password-signup tr tbody {
@@ -130,10 +135,11 @@ body .index-header .login {
 
 .login-password {
 	height: 30px;
-	width: 276px;
+	width: 188px;
 	border-radius: 4px;
 	border: 1px solid #ccd6dd;
 	padding: 7px;
+	margin-left: -88px;
 }
 
 .login-email {
