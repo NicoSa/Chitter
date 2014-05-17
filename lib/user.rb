@@ -19,7 +19,7 @@ class User
 	property :nickname, String, :unique => false, :message => "This nickname is already taken"
 	property :password_digest, Text
 	property :password_token, Text
-	property :password_token_timestamp, DateTime
+	property :password_token_timestamp, Text
 
 
 
