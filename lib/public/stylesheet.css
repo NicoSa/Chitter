@@ -101,7 +101,25 @@ body .index-header .login {
 	width: 302px;
 }
 
+body .signup {
+	background: white;
+	border: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+	border-left: 1px solid #e6e6e6;
+	border-right: 1px solid #e6e6e6;
+	border-radius: 4px;
+	margin: auto;
+	width: 302px;
+	height: 210px;
+	padding-top: 12px;
+}
 
+body .signup .signupinput {
+	padding: 5px;
+	margin: 3px;
+	margin-left: 12px;
+	margin-top: 4px;
+}
 .signin-btn {
 	color: #fff;
 	background-color: #55acee;
@@ -126,6 +144,25 @@ body .index-header .login {
   	-o-transition: all 0.30s ease-in-out;*/
 }
 
+.signup-btn {
+	color: #fff;
+	background-color: #55acee;
+	border: 1px solid #3b88c3;
+	font-size: 14px;
+	font-weight: bold;
+	border-spacing: 2px;
+	border-color: gray;
+	border-radius: 4px;
+	padding-bottom: 3px;
+	padding-top: 0px;
+	position: relative;
+	right: 1.8%;
+	height: 30px;
+	top: 9.2%;
+	width: 80px;
+	outline: none;
+	left: 109px;
+}
 .password-signup {
 	position: relative;
 }
@@ -142,6 +179,15 @@ body .index-header .login {
 }
 
 .login-email {
+	height: 30px;
+	width: 276px;
+	border-radius: 4px;
+	border: 1px solid #ccd6dd;
+	padding: 9px;
+}
+
+
+.signupinput {
 	height: 30px;
 	width: 276px;
 	border-radius: 4px;
@@ -179,7 +225,7 @@ body .index-header .login {
 	text-decoration: underline;
 }
 
-.signup a {
+.signuplogin a {
 	color: #0084b4;
 	font-size: 12px;
 	line-height: 13px;
@@ -191,7 +237,7 @@ body .index-header .login {
 
 }
 
-.signup a:hover {
+.signuplogin a:hover {
 	color: #0084b4;
 	font-size: 12px;
 	line-height: 13px;
@@ -221,7 +267,6 @@ input[type=text]:focus,
 input[type=password]:focus {
     box-shadow: 0 0 8px #55acee;
     border-color: #55acee;
-
 }
 
 input[type=text],
@@ -248,3 +293,4 @@ button:active {
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#26000000, endColorstr=#26000000)";
     border-color: #3b88c3;
 }
+
