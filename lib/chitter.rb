@@ -5,7 +5,6 @@ require_relative './user.rb'
 require_relative './email_controller.rb'
 require_relative './post.rb'
 require_relative './data_mapper_setup.rb'
-require_relative '../helpers/current_user.rb'
 
 include Email
 include BCrypt
