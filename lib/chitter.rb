@@ -17,7 +17,7 @@ set :session_secret, 'super secret'
 
 get '/' do
   @posts = Post.all(:order => [:time.desc])
-  erb :"User/index"
+  erb :"user/index"
 end
 
 post '/' do
@@ -27,7 +27,7 @@ post '/' do
 end
 
 get '/signup/new' do
-    erb :"User/new_user"
+    erb :"user/new_user"
 end
 
 post '/signup' do
@@ -40,7 +40,7 @@ post '/signup' do
     session[:user_id] = @user.id
     redirect to ('/user_interface')
   else 
-    erb :"Errors/signup_taken"
+    erb :"errors/signup_taken"
   end
 end
 
@@ -56,14 +56,14 @@ post '/login' do
     find_user = User.first(:email => params[:email])
     redirect to('/user_interface')
   else
-    erb :"Errors/wrong_login"
+    erb :"errors/wrong_login"
   end
 end
 
 get '/user_interface' do
   if session[:user_id] != nil
   @posts = Post.all(:order => [:time.desc])
-  erb :"User/user_interface"
+  erb :"user/user_interface"
   else
   redirect to('/')
   end
@@ -77,7 +77,7 @@ delete '/logout' do
 end
 
 get '/forgotten_password' do
-  erb :"Recovery/forgotten_password"
+  erb :"recovery/forgotten_password"
 end
 
 post '/forgotten_password' do
@@ -93,9 +93,9 @@ post '/forgotten_password' do
     user.save
     #send email with token and link
     send_recovery_email(generated_token,email)
-    erb :"Recovery/please_check_email"
+    erb :"recovery/please_check_email"
   rescue
-    erb :"Errors/user_not_exist"
+    erb :"errors/user_not_exist"
   end
 end
 
@@ -104,9 +104,9 @@ get '/reset_password/:token' do
   begin 
     user.password_token == params[:token]
     @token = params[:token]
-    erb :"Recovery/reset_password"
+    erb :"recovery/reset_password"
   rescue
-    erb :"Errors/token_has_been_used"
+    erb :"errors/token_has_been_used"
   end
 end
 
@@ -123,8 +123,8 @@ post '/reset_password' do
       user.password_token_timestamp = nil
       #save changes
       user.save
-      erb :"Recovery/password_changed"
+      erb :"recovery/password_changed"
   rescue
-    erb :"Errors/token_crash"
+    erb :"errors/token_crash"
   end
 end
