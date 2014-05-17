@@ -167,6 +167,18 @@ body .index-header .login {
 	margin-bottom: 16px;
 }
 
+.login-forgotpassword a:hover {
+	color: #0084b4;
+	font-size: 12px;
+	line-height: 13px;
+	margin: 0;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+	background: transparent;
+	text-decoration: none;
+	margin-bottom: 16px;
+	text-decoration: underline;
+}
+
 .login .signup a {
 	color: #0084b4;
 	font-size: 12px;
@@ -177,6 +189,17 @@ body .index-header .login {
 	text-decoration: none;
 	border-spacing: 2px;
 
+}
+
+.login .signup a:hover {
+	color: #0084b4;
+	font-size: 12px;
+	line-height: 13px;
+	margin: 0;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.6);
+	background: transparent;
+	text-decoration: underline;
+	border-spacing: 2px;
 }
 
 .dot-form {
