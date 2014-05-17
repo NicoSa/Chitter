@@ -34,7 +34,7 @@ shotgun -p 3000 chitter.rb
 ```
 open localhost:3000 in your browser
 
-Hot to run tests
+How to run tests
 ----
 ```sh
 cd Chitter
