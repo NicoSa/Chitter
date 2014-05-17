@@ -24,6 +24,9 @@ Technologies used
 - Javascript
 - Rspec
 - Capybara
+- Bcrypt
+- [Mailgun API]
+- Datamapper
 
 How to run it
 ----
@@ -41,3 +44,4 @@ cd Chitter
 rspec
 ```
 [App on Heroku]:http://chitter3000.herokuapp.com
+[Mailgun API]:http://documentation.mailgun.com/quickstart.html
