@@ -1,13 +1,14 @@
-Welcome <%= session[:name] %> 
+<div class="user-interface">Welcome <%= session[:name] %> 
 
 <div id="new-post">
 	<form action="/" method="post">
-		<textarea cols="50" rows="4" name="message" maxlength="140" minlength="25"></textarea>
-		<input type="submit" value="Post">
+		<textarea class="textarea" cols="30" rows="1" name="message" maxlength="140" minlength="25" placeholder="Post a new cheet..."></textarea>
+		<br><button class="userinterface-buttons" type="submit">Cheet</button>
 	</form>
 </div>
 <form action="/logout" method="post">
 		<input type="hidden" name="_method" value="delete">
-		<input type="submit" value="Sign out">
+		<button class="userinterface-buttons" type="submit">Sign out</button>
 </form>
 <%= erb :"partials/post_display" %>
+</div>
