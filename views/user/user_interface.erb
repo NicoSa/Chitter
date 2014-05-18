@@ -6,6 +6,7 @@
 	<form action="/" method="post">
 		<textarea class="textarea" cols="30" rows="1" name="message" maxlength="140" minlength="25" placeholder="Post a new cheet..." required></textarea>
 		<br><button class="userinterface-buttons" type="submit">Cheet</button>
+		<span class="characters-left"></span>
 	</form>
 </div>
 <form action="/logout" method="post">
@@ -15,8 +16,14 @@
 <%= erb :"partials/post_display" %>
 </div>
 <script> 
-    $(document).ready(function(){
-  $('.textarea').on('click', function() { 
-    $(this).hidden();
+	$('.userinterface-buttons').hide()
+	$('.textarea').click( function() {
+		$('.userinterface-buttons').show()
+	});
+    $('.textarea').bind('input propertychange',function() {
+    	var cheetText = $(this).val()
+    	var charactersLeft = 140 - cheetText.length
+    	console.log(cheetText.length)
+    	$('.characters-left').html(charactersLeft)
     });
 </script>
