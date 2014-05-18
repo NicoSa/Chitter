@@ -13,6 +13,10 @@ use Rack::Flash
 
 enable :sessions
 set :session_secret, 'super secret'
+# sets root as the parent-directory of the current file
+set :root, File.dirname(__FILE__)
+# sets the view directory correctly
+# set :views, Proc.new { File.join(root, "views") } 
 
 get '/' do
   @posts = Post.all(:order => [:time.desc])
