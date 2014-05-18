@@ -256,16 +256,10 @@ body .signup .signupinput {
 	padding: 9px;
 }
 
-.login-email[type=text]:focus, .login-password[type=password]:focus, .signupinput[type=text]:focus, .resetpassword[type=password]:focus{
-}
+/*.login-email[type=text]:focus, .login-password[type=password]:focus, .signupinput[type=text]:focus, .resetpassword[type=password]:focus{
+}*/
 
-::-webkit-input-placeholder {
-	color: #66757f;
-}
 
-focus::-webkit-input-placeholder:focus {
-	opacity: 0.5;
-}
 
 input::-webkit-input-placeholder {
     color: #66757f;
@@ -275,7 +269,7 @@ input:focus::-webkit-input-placeholder {
 }
 
 }
-.textarea {
+.user-interface .textarea {
 	border: 1px solid #ccd6dd;
 	height: 30px;
 	width: 276px;
@@ -386,7 +380,7 @@ input[type=textarea]:focus {
 	color: #292f33;
 	border-color: #56b4ef;
 }
-}
+
 
 input[type=text],
 input[type=password]:focus,

@@ -35,7 +35,7 @@ post '/signup' do
                         :nickname => params[:nickname],
                         :password => params[:password],
                         :password_confirmation => params[:password_confirmation])
-  if @user.save
+  if @user.save && params[:password] == params[:password_confirmation]
     session[:user_id] = @user.id
     redirect to ('/user_interface')
   else 
