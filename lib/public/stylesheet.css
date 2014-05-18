@@ -210,7 +210,7 @@ body .signup .signupinput {
 .resetpasswordform {
 	text-align: center;
 }
-.resetpasswordbutton {
+.resetpasswordbutton, body .errors a {
 	color: #fff;
 	background-color: #55acee;
 	border: 1px solid #3b88c3;
@@ -229,6 +229,7 @@ body .signup .signupinput {
 	outline: none;
 	left: 2px;
 	margin-top: 13px;
+	text-decoration: none;
 }
 .password-signup {
 	position: relative;
@@ -377,7 +378,12 @@ input[type=textarea]:focus {
     height: 90px;
 }
 
-button:hover {
+body .errors {
+	text-align: center;
+}
+
+
+button:hover, body .errors a:hover {
 	background-color: #55acee;
 	background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.15));
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00000000, endColorstr=#26000000)";
@@ -386,7 +392,7 @@ button:hover {
 	cursor: hand;
 }
 
-button:active {
+button:active, body .errors a:active {
 	background-color: #3b88c3;
     background-image: linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.15));
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#26000000, endColorstr=#26000000)";

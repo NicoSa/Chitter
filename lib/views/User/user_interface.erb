@@ -1,7 +1,7 @@
 
 
 <div class="user-interface"><!-- Welcome <%= session[:name] %>  -->
-<br>
+
 <div id="new-post">
 	<form action="/" method="post">
 		<textarea class="textarea" cols="30" rows="1" name="message" maxlength="140" minlength="25" placeholder="Post a new cheet..." required></textarea>
@@ -16,7 +16,7 @@
 </div>
 <script> 
     $(document).ready(function(){
-  $('textarea').on('click', function() { 
-    $(this).attr({rows: 90})});
+  $('.textarea').on('click', function() { 
+    $(this).attr('rows',90);
     });
     </script>
