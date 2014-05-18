@@ -2,23 +2,33 @@
 
 <div class="user-interface"><!-- Welcome <%= session[:name] %>  -->
 
-<div id="new-post">
-	<form action="/" method="post">
+<div class="new-post">
+	<form id="post-form" action="/" method="post">
 		<textarea class="textarea" cols="30" rows="1" name="message" maxlength="140" minlength="25" placeholder="Post a new cheet..." required></textarea>
-		<br><button class="userinterface-buttons" type="submit">Cheet</button>
-		<span class="characters-left"></span>
+		<br><span class="characters-left">140 </span><button class="userinterface-buttons" type="submit">Cheet</button>
+		
 	</form>
 </div>
 <form action="/logout" method="post">
 		<input type="hidden" name="_method" value="delete">
-		<button class="userinterface-buttons" type="submit">Sign out</button>
+		<button class="userinterface-buttons-submit" type="submit">Sign out</button>
 </form>
 <%= erb :"partials/post_display" %>
 </div>
 <script> 
+	$('.characters-left').hide()
 	$('.userinterface-buttons').hide()
 	$('.textarea').click( function() {
-		$('.userinterface-buttons').show()
+		$('.userinterface-buttons').show();
+		$('.characters-left').show();
+		$('.textarea').attr({rows : "200"});
+	});
+
+	
+
+	$('.textarea').blur(function () {
+		$('.userinterface-buttons').hide()
+		$('.characters-left').hide()
 	});
     $('.textarea').bind('input propertychange',function() {
     	var cheetText = $(this).val()
@@ -26,4 +36,5 @@
     	console.log(cheetText.length)
     	$('.characters-left').html(charactersLeft)
     });
+
 </script>
