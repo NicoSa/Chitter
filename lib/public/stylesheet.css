@@ -206,6 +206,7 @@ body .signup .signupinput {
 	left: 3px;
 	margin: 2px;
 }
+
 .resetpasswordform {
 	text-align: center;
 }
@@ -353,18 +354,27 @@ body .signup .signupinput {
 }
 
 input[type=text]:focus,
-input[type=password]:focus {
+input[type=password]:focus,
+input[type=textarea]:focus {
     box-shadow: 0 0 8px #55acee;
     border-color: #55acee;
 }
 
 input[type=text],
-input[type=password]:focus {
+input[type=password]:focus,
+input[type=textarea]:focus {
 	outline: none;
 	/*-webkit-transition: all 0.30s ease-in-out;
   	-moz-transition: all 0.30s ease-in-out;
   	-ms-transition: all 0.30s ease-in-out;
   	-o-transition: all 0.30s ease-in-out;*/
+}
+
+.textarea:focus {
+	outline:none;
+	box-shadow: 0 0 8px #55acee;
+    border-color: #55acee;
+    height: 90px;
 }
 
 button:hover {
