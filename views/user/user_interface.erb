@@ -3,7 +3,7 @@
 <div class="user-interface"><!-- Welcome <%= session[:name] %>  -->
 
 <div class="new-post">
-	<form id="post-form" action="/" method="post">
+	<form class="post-form" action="/" method="post">
 		<textarea class="textarea" cols="30" rows="1" name="message" maxlength="140" minlength="25" placeholder="Post a new cheet..." required></textarea>
 		<br><span class="characters-left">140 </span><button class="userinterface-buttons" type="submit">Cheet</button>
 		
@@ -21,7 +21,7 @@
 	$('.textarea').click( function() {
 		$('.userinterface-buttons').show();
 		$('.characters-left').show();
-		$('.textarea').attr({rows : "200"});
+		$('.post-form').attr({rows : '200'});
 	});
 
 	
