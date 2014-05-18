@@ -268,7 +268,14 @@ input:focus::-webkit-input-placeholder {
     opacity: 0.5;
 }
 
+textarea::-webkit-input-placeholder {
+    color: #66757f;
 }
+textarea:focus::-webkit-input-placeholder {
+    opacity: 0.5;
+}
+
+
 .user-interface .textarea {
 	border: 1px solid #ccd6dd;
 	height: 30px;
