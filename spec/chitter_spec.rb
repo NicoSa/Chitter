@@ -72,6 +72,17 @@ feature "User signs in" do
     expect(page).to have_content("Hello Chitter!")
   end
 
+  scenario "posts and checks board" do
+    visit ('/')
+    fill_in 'email', :with => 'test@test.com'
+    fill_in 'password', :with => 'test'
+    click_on('Sign in')
+    fill_in 'message', :with => 'Hello Chitter!'
+    click_on('Cheet')
+    expect(page).to have_content("Hello Chitter!")
+    expect(page).to have_content("Nico")
+    expect(page).to have_content("SuperNico")
+  end
 
 end
 

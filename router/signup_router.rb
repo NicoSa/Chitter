@@ -10,6 +10,8 @@ post '/signup' do
                         :password_confirmation => params[:password_confirmation])
   if @user.save && params[:password] == params[:password_confirmation]
     session[:user_id] = @user.id
+    session[:nickname] = @user.nickname
+    session[:name] = @user.name
     redirect to ('/user_interface')
   else 
     erb :"errors/signup_taken"
