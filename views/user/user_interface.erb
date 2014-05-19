@@ -21,14 +21,19 @@
 	$('.textarea').click( function() {
 		$('.userinterface-buttons').show();
 		$('.characters-left').show();
-		$('.post-form').attr({rows : '200'});
 	});
 
 	
 
+	$('.textarea').focus(function () {
+		$(this).addClass("expanded")
+	});
 	$('.textarea').blur(function () {
-		$('.userinterface-buttons').hide()
-		$('.characters-left').hide()
+		if($(".textarea").val().length < 1) {
+			$(this).removeClass("expanded")
+			$('.userinterface-buttons').hide()
+			$('.characters-left').hide()		
+		}
 	});
     $('.textarea').bind('input propertychange',function() {
     	var cheetText = $(this).val()

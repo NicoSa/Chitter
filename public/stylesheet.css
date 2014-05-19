@@ -233,7 +233,8 @@ margin-right: -76px;
 }
 
 .characters-left {
-
+	width: 30px;
+	display: inline-block;
 }
 
 .resetpasswordform {
@@ -426,7 +427,7 @@ input[type=textarea]:focus {
   	-o-transition: all 0.30s ease-in-out;*/
 }
 
-.textarea:focus {
+.textarea.expanded {
 	outline:none;
 	box-shadow: 0 0 8px #55acee;
     border-color: #55acee;
@@ -442,7 +443,6 @@ input[type=textarea]:focus {
 	border-radius: 4px;
 	margin: auto;
 	width: 302px;
-	height: 38px;
 	padding-top: 3px;
 }
 body .errors {
