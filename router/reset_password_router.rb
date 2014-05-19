@@ -1,12 +1,12 @@
 get '/reset_password/:token' do
-  user = User.first(:password_token => params[:token])
-  begin 
-    user.password_token == params[:token]
-    @token = params[:token]
+  # user = User.first(:password_token => params[:token])
+  # begin 
+  #   user.password_token == params[:token]
+  #   @token = params[:token]
     erb :"recovery/reset_password"
-  rescue
-    erb :"errors/token_has_been_used"
-  end
+  # rescue
+  #   erb :"errors/token_has_been_used"
+  # end
 end
 
 post '/reset_password' do

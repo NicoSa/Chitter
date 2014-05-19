@@ -3,7 +3,7 @@ require 'rest_client'
 module Email
 
 def base_url
-	 ENV["RACK_ENV"] == "production" ? "chitternicosa.herokuapp.com" : "localhost:9393" 
+	 ENV["RACK_ENV"] == "production" ? "chitter3000.herokuapp.com" : "localhost:9393" 
 end
 
 def send_recovery_email(token, email)

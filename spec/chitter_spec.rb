@@ -49,7 +49,7 @@ feature "User signs in" do
     fill_in 'email', :with => 'test@test.com'
     fill_in 'password', :with => 'test'
     click_on('Sign in')
-    expect(page).to have_content("Cheet   ")
+    expect(page).to have_content("Cheet")
   end
 
   scenario "with incorrect credentials" do
