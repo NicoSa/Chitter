@@ -23,7 +23,6 @@ Technologies used
 - jQuery
 - Javascript
 - Rspec
-hello
 - Capybara
 - Bcrypt
 - [Mailgun API]
