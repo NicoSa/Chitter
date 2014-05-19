@@ -111,11 +111,12 @@ end
 feature "User forgets password" do
 
   before(:each) do
-    User.create(:email => "test@test.com",
+    User.create(:email => "test@nicosaueressig.com",
                 :name => "Nico",
                 :nickname => "SuperNico",
                 :password => 'test',
                 :password_confirmation => 'test')
+    User.stub(:send_recovery_email).and_return("Send without Errors, stub!")
   end
 
   scenario "and demands reset" do
@@ -129,6 +130,13 @@ feature "User forgets password" do
     fill_in 'email', :with => 'wrong@email.com'
     click_on('Reset Password')
     expect(page).to have_content('User doesn´t exist')
+  end
+
+  scenario "requests reset an token is created" do
+    visit('/forgotten_password')
+    fill_in 'email', :with => 'test@nicosaueressig.com'
+    click_on('Reset Password')
+    expect(User.first.password_token.length).to eq 64
   end
 
 end
@@ -147,4 +155,7 @@ feature "User tries to reset password" do
     visit('/reset_password/nonvalidtoken')
     expect(page).to have_content('Token has already been used...')
   end
+
 end
+
+
