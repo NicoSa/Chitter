@@ -5,12 +5,12 @@ require_relative './user.rb'
 require_relative './email_controller.rb'
 require_relative './post.rb'
 require_relative './data_mapper_setup.rb'
-require_relative './posts_router.rb'
-require_relative './signup_router.rb'
-require_relative './login_router.rb'
-require_relative './user_routes.rb'
-require_relative './forgotten_password_routes.rb'
-require_relative './reset_password_routes.rb'
+require_relative './router/posts_router.rb'
+require_relative './router/signup_router.rb'
+require_relative './router/login_router.rb'
+require_relative './router/user_router.rb'
+require_relative './router/forgotten_password_router.rb'
+require_relative './router/reset_password_router.rb'
 include Email
 include BCrypt
 

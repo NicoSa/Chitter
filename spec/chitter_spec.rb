@@ -87,6 +87,7 @@ feature "User signs out" do
 
   scenario "while being signed in" do
     visit ('/')
+    # save_and_open_page <<-- launchy ! ! 
     fill_in 'email', :with => 'test@test.com'
     fill_in 'password', :with => 'test'
     click_on('Sign in')

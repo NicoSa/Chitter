@@ -77,6 +77,8 @@ GEM
     highline (1.6.21)
     json (1.8.1)
     json_pure (1.8.1)
+    launchy (2.4.2)
+      addressable (~> 2.3)
     mailgun-ruby (1.0.2)
       json (~> 1.8)
       rest-client (~> 1.6)
@@ -134,6 +136,7 @@ DEPENDENCIES
   data_mapper
   database_cleaner
   dm-postgres-adapter
+  launchy
   mailgun-ruby
   pg
   rack-flash3
