@@ -2,7 +2,7 @@ ENV["RACK_ENV"] = 'development'
 
 require 'database_cleaner'
 require 'capybara/rspec'
-require_relative '../lib/chitter.rb'
+require_relative '../chitter.rb'
 
 Capybara.app = Sinatra::Application.new
 

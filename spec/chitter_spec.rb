@@ -49,7 +49,7 @@ feature "User signs in" do
     fill_in 'email', :with => 'test@test.com'
     fill_in 'password', :with => 'test'
     click_on('Sign in')
-    expect(page).to have_content("Welcome Nico")
+    expect(page).to have_content("Cheet   ")
   end
 
   scenario "with incorrect credentials" do
@@ -65,9 +65,8 @@ feature "User signs in" do
     fill_in 'email', :with => 'test@test.com'
     fill_in 'password', :with => 'test'
     click_on('Sign in')
-    expect(page).to have_content("Welcome Nico")
     fill_in 'message', :with => 'Hello Chitter!'
-    click_on('Post')
+    click_on('Cheet')
     expect(page).to have_content("Hello Chitter!")
     click_on('Sign out')
     expect(page).to have_content("Hello Chitter!")
@@ -116,7 +115,7 @@ feature "User forgets password" do
   scenario "puts in non-existant email" do
     visit('/forgotten_password')
     fill_in 'email', :with => 'wrong@email.com'
-    click_button('reset password')
+    click_on('Reset Password')
     expect(page).to have_content('User doesn´t exist')
   end
 

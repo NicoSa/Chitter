@@ -38,7 +38,7 @@
     $('.textarea').bind('input propertychange',function() {
     	var cheetText = $(this).val()
     	var charactersLeft = 140 - cheetText.length
-    	console.log(cheetText.length)
+    	// console.log(cheetText.length)
     	$('.characters-left').html(charactersLeft)
     });
 
