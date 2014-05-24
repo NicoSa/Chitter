@@ -1,10 +1,10 @@
 get '/' do
-  @posts = Post.all(:order => [:time.desc])
+  display_all_posts
   erb :"user/index"
 end
 
 post '/' do
-  post_time = Time.now
-  Post.create(:message => params[:message], :time => post_time, :nickname => session[:nickname], :name => session[:name])  
+  message, name, nickname = params[:message], session[:name], session[:nickname]
+  create_new_post(message, nickname, name)
   redirect to('/user_interface')
 end

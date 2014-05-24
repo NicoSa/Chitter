@@ -96,7 +96,7 @@ feature "User signs out" do
                 :password_confirmation => 'test')
   end
 
-  scenario "while being signed in" do
+  scenario "while being signed in and session are deleted" do
     visit ('/')
     # save_and_open_page <<-- launchy ! ! 
     fill_in 'email', :with => 'test@test.com'
@@ -105,6 +105,8 @@ feature "User signs out" do
     click_on('Sign out')
     expect(page).to_not have_content("Welcome Nico")
   end
+
+
 
 end
 
@@ -123,6 +125,13 @@ feature "User forgets password" do
     visit('/forgotten_password')
     expect(page).to have_content("Please put in your email and we will send you a link to resetting your password!
 ")
+  end
+
+  scenario "puts in existant email" do
+    visit('/forgotten_password')
+    fill_in 'email', :with => 'test@nicosaueressig.com'
+    click_on('Reset Password')
+    expect(page).to have_content('Please check your email!')
   end
 
   scenario "puts in non-existant email" do
@@ -148,12 +157,23 @@ feature "User tries to reset password" do
                 :name => "Nico",
                 :nickname => "SuperNico",
                 :password => 'test',
-                :password_confirmation => 'test')
+                :password_confirmation => 'test',
+                :password_token => 'FGEMXMIREOUQBPUBSXVYUZPMBJKOMUDEPXBDNJRRAYDXCTKIYUXHTPDDHPQDLQAL')
   end
 
   scenario "has no valid token" do
     visit('/reset_password/nonvalidtoken')
     expect(page).to have_content('Token has already been used...')
+  end
+
+  scenario "has valid token and resets password" do
+    visit('/reset_password/FGEMXMIREOUQBPUBSXVYUZPMBJKOMUDEPXBDNJRRAYDXCTKIYUXHTPDDHPQDLQAL')
+    expect(page).to have_content('Please put in your new password!')
+    fill_in 'password', :with => 'otherpassword'
+    fill_in 'password_confirmation', :with => 'otherpassword'
+
+    click_on('Reset Password')
+    expect(page).to have_content('All done, you can login with your new password now')
   end
 
 end

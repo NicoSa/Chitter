@@ -1,19 +1,13 @@
 get '/signup/new' do
-    erb :"user/new_user"
+  erb :"user/new_user"
 end
 
 post '/signup' do
-  @user = User.new(:email => params[:email],
-                        :name => params[:name],
-                        :nickname => params[:nickname],
-                        :password => params[:password],
-                        :password_confirmation => params[:password_confirmation])
+  create_new_user
   if @user.save && params[:password] == params[:password_confirmation]
-    session[:user_id] = @user.id
-    session[:nickname] = @user.nickname
-    session[:name] = @user.name
+    establish_session
     redirect to ('/user_interface')
-  else 
+  else
     erb :"errors/signup_taken"
   end
 end
