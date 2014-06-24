@@ -190,25 +190,25 @@ body .signup .signupinput {
 
 .userinterface-buttons {
 	color: #fff;
-background-color: #55acee;
-border: 1px solid #3b88c3;
-font-size: 14px;
-font-weight: bold;
-border-spacing: 2px;
-border-color: gray;
-border-radius: 4px;
-padding-bottom: 3px;
-padding-top: 0px;
-position: relative;
-right: 1.8%;
-height: 30px;
-top: 0.2%;
-width: 80px;
-outline: none;
-left: 76px;
-margin: 2px;
-margin-left: -74px;
-margin-right: -76px;
+	background-color: #55acee;
+	border: 1px solid #3b88c3;
+	font-size: 14px;
+	font-weight: bold;
+	border-spacing: 2px;
+	border-color: gray;
+	border-radius: 4px;
+	padding-bottom: 3px;
+	padding-top: 0px;
+	position: relative;
+	right: 1.8%;
+	height: 30px;
+	top: 0.2%;
+	width: 80px;
+	outline: none;
+	left: 76px;
+	margin: 2px;
+	margin-left: -74px;
+	margin-right: -76px;
 }
 
 .userinterface-buttons-submit {
@@ -264,24 +264,24 @@ margin-right: -76px;
 
 .resetpasswordbuttontoken {
 	color: #fff;
-background-color: #55acee;
-border: 1px solid #3b88c3;
-font-size: 14px;
-font-weight: bold;
-border-spacing: 2px;
-border-color: gray;
-border-radius: 4px;
-padding-bottom: 6px;
-padding-top: 2px;
-position: relative;
-right: 1.8%;
-height: 25px;
-top: -0.8%;
-width: 127px;
-outline: none;
-left: 2px;
-margin-top: 13px;
-text-decoration: none;
+	background-color: #55acee;
+	border: 1px solid #3b88c3;
+	font-size: 14px;
+	font-weight: bold;
+	border-spacing: 2px;
+	border-color: gray;
+	border-radius: 4px;
+	padding-bottom: 6px;
+	padding-top: 2px;
+	position: relative;
+	right: 1.8%;
+	height: 25px;
+	top: -0.8%;
+	width: 127px;
+	outline: none;
+	left: 2px;
+	margin-top: 13px;
+	text-decoration: none;
 }
 .password-signup {
 	position: relative;
@@ -497,23 +497,23 @@ input[type=textarea]:focus {
 	width: 302px;
 	padding-top: 3px;
 }
-}
+
 body .errors {
 	text-align: center;
 }
 
 .token-form {
 	background: white;
-border: 1px solid #e6e6e6;
-border-bottom: 1px solid #e6e6e6;
-border-left: 1px solid #e6e6e6;
-border-right: 1px solid #e6e6e6;
-border-radius: 4px;
-margin: auto;
-width: 302px;
-height: 138px;
-padding-top: 9px;
-padding-bottom: 5px;
+	border: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+	border-left: 1px solid #e6e6e6;
+	border-right: 1px solid #e6e6e6;
+	border-radius: 4px;
+	margin: auto;
+	width: 302px;
+	height: 138px;
+	padding-top: 9px;
+	padding-bottom: 5px;
 }
 
 .arschloch {
@@ -522,34 +522,34 @@ padding-bottom: 5px;
 
 .token-input {
 	height: 30px;
-width: 276px;
-border-radius: 4px;
-border: 1px solid #ccd6dd;
-padding: 5px;
-font-size: 13px;
-line-height: 20px;
-margin: 4px;
-margin-left: 13px;
+	width: 276px;
+	border-radius: 4px;
+	border: 1px solid #ccd6dd;
+	padding: 5px;
+	font-size: 13px;
+	line-height: 20px;
+	margin: 4px;
+	margin-left: 13px;
 }
 
 .token-button {
 	color: #fff;
-background-color: #55acee;
-border: 1px solid #3b88c3;
-font-size: 14px;
-font-weight: bold;
-border-spacing: 2px;
-border-color: gray;
-border-radius: 4px;
-padding-bottom: 3px;
-padding-top: 0px;
-position: relative;
-right: 1.8%;
-height: 30px;
-top: 9.2%;
-width: 126px;
-outline: none;
-left: 88px;
+	background-color: #55acee;
+	border: 1px solid #3b88c3;
+	font-size: 14px;
+	font-weight: bold;
+	border-spacing: 2px;
+	border-color: gray;
+	border-radius: 4px;
+	padding-bottom: 3px;
+	padding-top: 0px;
+	position: relative;
+	right: 1.8%;
+	height: 30px;
+	top: 9.2%;
+	width: 126px;
+	outline: none;
+	left: 88px;
 }
 
 button:hover, body .errors a:hover {
