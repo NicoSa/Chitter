@@ -1,16 +1,15 @@
 <ul>
-<div class="cheets-heading">Cheets</div>
-
-	<% @posts.each do |post| %>
-	<div class="feed">			
-		
-		<div class="feed-header">
-			<div class="nickname"><%= post.nickname %></div>
-			<div class="name">@<%= post.name %></div> <span class="dot">·</span>
-			<div class="time"><%= post.time.strftime("%A %H:%M") %></div>
-		</div>
-		<div class="feed-message"><%= post.message %>
-	</div>	
-</div>
-	<% end %>
+	<div class="cheets-heading">Cheets</div>
+		<% @posts.each do |post| %>
+		<div class="feed">			
+			
+			<div class="feed-header">
+				<div class="nickname"><%= post.nickname %></div>
+				<div class="name">@<%= post.name %></div> <span class="dot">·</span>
+				<div class="time"><%= post.time.strftime("%A %H:%M") %></div>
+			</div>
+			<div class="feed-message"><%= post.message %>
+		<% end %>
+		</div>	
+	</div>
 </ul>

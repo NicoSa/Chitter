@@ -11,4 +11,3 @@ delete '/logout' do
   destroy_session
   redirect to ('/')
 end
-

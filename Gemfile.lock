@@ -97,6 +97,7 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    rake (10.3.2)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rest_client (1.7.3)
@@ -140,6 +141,7 @@ DEPENDENCIES
   mailgun-ruby
   pg
   rack-flash3
+  rake
   rest_client
   rspec
   shotgun

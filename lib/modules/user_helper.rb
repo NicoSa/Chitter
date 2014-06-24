@@ -40,7 +40,7 @@ module UserHelper
     @user.save
     send_recovery_email(generated_token,params[:email])
   end
-  
+
   def create_new_password
     @user.password_digest = BCrypt::Password.create(params[:password])
     @user.password_token = nil
